@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="https://se.havero/phonenumber">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:GetPhoneNumberListRequest>
+            <gs:number></gs:number>
+        </gs:GetPhoneNumberListRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

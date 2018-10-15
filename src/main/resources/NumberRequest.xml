@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns:gs="https://se.havero/phonenumber">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:GetPhoneNumberRequest>
+         <number>076-1341071</number>
+      </gs:GetPhoneNumberRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
