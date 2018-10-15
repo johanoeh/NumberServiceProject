@@ -15,7 +15,7 @@
   <xs:element name="GetPhoneNumberResponse" > 
       <xs:complexType>
           <xs:sequence>
-              <xs:element name="number" type="tns:phoneNumber"> </xs:element>
+              <xs:element name="number" type="tns:PhoneNumber"> </xs:element>
           </xs:sequence>
       </xs:complexType>
   </xs:element>
@@ -25,7 +25,7 @@
   <xs:element name="GetphoneNumberListResponse" > 
       <xs:complexType>
           <xs:sequence>
-              <xs:element name="list" type="tns:phoneNumbers"/>
+              <xs:element name="list" type="tns:PhoneNumbers"/>
           </xs:sequence>
       </xs:complexType>
   </xs:element>
@@ -38,8 +38,30 @@
       </xs:complexType>
   </xs:element>
   
+  <!-- message used to reserve number ************************************ -->
+  
+  <xs:element name="SetReservedRequest">
+      <xs:complexType>
+          <xs:sequence>
+              <xs:element name ="Reserved" type="tns:PhoneNumber"></xs:element>
+          </xs:sequence> 
+      </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="SetReservedResponse">
+      <xs:complexType>
+          <xs:sequence>
+              <!-- false if  number didn't get reserved-->
+              <xs:element name="Reserved" type="xs:boolean"/>
+          </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+  
+  
+  <!-- complex types used for messaging *********************************** -->
+  
 
-  <xs:complexType name="phoneNumber">
+  <xs:complexType name="PhoneNumber">
     <xs:sequence>
       <xs:element name="id" type="xs:long"/>
       <xs:element name="uid" type="xs:long"/>
@@ -48,9 +70,9 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="phoneNumbers">
+  <xs:complexType name="PhoneNumbers">
     <xs:sequence>
-      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="numbers" type="tns:phoneNumber"/>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="numbers" type="tns:PhoneNumber"/>
     </xs:sequence>
   </xs:complexType>
   

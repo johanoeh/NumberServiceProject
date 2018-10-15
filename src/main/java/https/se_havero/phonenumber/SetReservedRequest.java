@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Reserved" type="{https://se.havero/phonenumber}PhoneNumber"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name"
+    "reserved"
 })
-@XmlRootElement(name = "GetPhoneNumberListRequest")
-public class GetPhoneNumberListRequest {
+@XmlRootElement(name = "SetReservedRequest")
+public class SetReservedRequest {
 
-    @XmlElement(required = true)
-    protected String name;
+    @XmlElement(name = "Reserved", required = true)
+    protected PhoneNumber reserved;
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the reserved property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link PhoneNumber }
      *     
      */
-    public String getName() {
-        return name;
+    public PhoneNumber getReserved() {
+        return reserved;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the reserved property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link PhoneNumber }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setReserved(PhoneNumber value) {
+        this.reserved = value;
     }
 
 }

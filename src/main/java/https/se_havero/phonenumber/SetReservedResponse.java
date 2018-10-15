@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Reserved" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,28 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name"
+    "reserved"
 })
-@XmlRootElement(name = "GetPhoneNumberListRequest")
-public class GetPhoneNumberListRequest {
+@XmlRootElement(name = "SetReservedResponse")
+public class SetReservedResponse {
 
-    @XmlElement(required = true)
-    protected String name;
+    @XmlElement(name = "Reserved")
+    protected boolean reserved;
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the reserved property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getName() {
-        return name;
+    public boolean isReserved() {
+        return reserved;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the reserved property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setReserved(boolean value) {
+        this.reserved = value;
     }
 
 }
