@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://se.havero/phonenumber" targetNamespace="https://se.havero/phonenumber" version="1.0">
+    
+  
+  <!-- Request and Response body  for phone numbers ************************ -->
+  
+  <xs:element name="GetPhoneNumberRequest"> 
+   <xs:complexType>
+       <xs:sequence>
+           <xs:element name="number" type="xs:string"/>
+       </xs:sequence>
+   </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="GetPhoneNumberResponse" > 
+      <xs:complexType>
+          <xs:sequence>
+              <xs:element name="number" type="tns:phoneNumber"> </xs:element>
+          </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+  
+  <!-- Request and Response for a list of phonenumbers ******************** -->
+
+  <xs:element name="GetphoneNumberListResponse" > 
+      <xs:complexType>
+          <xs:sequence>
+              <xs:element name="list" type="tns:phoneNumbers"/>
+          </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="GetPhoneNumberListRequest"> 
+      <xs:complexType>
+          <xs:sequence>
+              <xs:element name="name" type="xs:string"></xs:element>
+          </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+  
+
+  <xs:complexType name="phoneNumber">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="uid" type="xs:long"/>
+      <xs:element name="number" type="xs:string"/>
+      <xs:element name="reserved" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="phoneNumbers">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="numbers" type="tns:phoneNumber"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>
